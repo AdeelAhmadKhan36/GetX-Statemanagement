@@ -9,7 +9,9 @@ class My_HomePage extends StatefulWidget {
 
 class _My_HomePageState extends State<My_HomePage> {
   @override
+
   Widget build(BuildContext context) {
+    final height=MediaQuery.of(context).size.height*0.2;
     return Scaffold(
       appBar: AppBar(
         title: Text("Getx Practice",style: TextStyle(color: Colors.white),),
@@ -75,7 +77,12 @@ class _My_HomePageState extends State<My_HomePage> {
                 },
               ),
             ),
-            SizedBox(height: 460,),
+
+            Container(
+               height:  Get.height*0.5,
+              color: Colors.green,
+            ),
+           SizedBox(height: 30,),
 
             ElevatedButton(onPressed: (){
 
