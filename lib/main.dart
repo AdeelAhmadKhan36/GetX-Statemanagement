@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:getx_statemanagement/view/HomePage.dart';
 import 'package:get/get.dart';
+import 'package:getx_statemanagement/view/Language_home.dart';
+import 'package:getx_statemanagement/view/Languages.dart';
 import 'package:getx_statemanagement/view/Pagetwo.dart';
 
 void main() {
@@ -16,13 +18,16 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
+      locale: Locale('en','us'),
+      fallbackLocale: Locale('eng', 'us'),
+      translations: Languages(),
 
       theme: ThemeData(
 
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const My_HomePage(),
+      home: const Language_Home(),
       getPages: [
         GetPage(name: '/PageTwo', page: ()=>PageTwo()),
       ],
