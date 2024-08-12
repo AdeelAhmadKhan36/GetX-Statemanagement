@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:getx_statemanagement/view/Counte_Home.dart';
 import 'package:getx_statemanagement/view/HomePage.dart';
 import 'package:get/get.dart';
 import 'package:getx_statemanagement/view/Language_home.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Language_Home(),
+      home: const Counter_Home(),
       getPages: [
         GetPage(name: '/PageTwo', page: ()=>PageTwo()),
       ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 class My_HomePage extends StatefulWidget {
   const My_HomePage({super.key});
 
@@ -9,108 +10,132 @@ class My_HomePage extends StatefulWidget {
 
 class _My_HomePageState extends State<My_HomePage> {
   @override
-
   Widget build(BuildContext context) {
-    final height=MediaQuery.of(context).size.height*0.2;
+    final height = MediaQuery.of(context).size.height * 0.2;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Getx Practice",style: TextStyle(color: Colors.white),),
+        title: const Text(
+          "Getx Applications",
+          style: TextStyle(color: Colors.white),
+        ),
         backgroundColor: Colors.indigoAccent,
         centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.only(left: 20,right: 20),
+        padding: const EdgeInsets.only(left: 20, right: 20),
         child: Column(
           children: [
-
-            SizedBox(height: 30,),
+            const SizedBox(
+              height: 30,
+            ),
+            Container(
+              height: Get.height * 0.5,
+              color: Colors.green,
+              child: const Center(
+                  child: Text(
+                'Getx State Management ',
+                style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
+              )),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
             Card(
               child: ListTile(
-                title: Text("Dialog Alert in Getx"),
-
-                onTap:(){
+                title: const Text("Dialog Alert in Getx"),
+                onTap: () {
                   Get.defaultDialog(
                     title: "Delete Chat",
                     middleText: "Are you sure?",
-                    titlePadding: EdgeInsets.only(top: 30),
-                    contentPadding: EdgeInsets.only(top: 30),
-                    confirm: TextButton(onPressed:(){}, child: Text("Ok")),
-                    cancel: TextButton(onPressed:(){
-                      Get.back();
-                    }, child: Text("Cancel")),
-
+                    titlePadding: const EdgeInsets.only(top: 30),
+                    contentPadding: const EdgeInsets.only(top: 30),
+                    confirm:
+                        TextButton(onPressed: () {}, child: const Text("Ok")),
+                    cancel: TextButton(
+                        onPressed: () {
+                          Get.back();
+                        },
+                        child: const Text("Cancel")),
                   );
                 },
               ),
             ),
-
+            const SizedBox(
+              height: 20,
+            ),
             Card(
               child: ListTile(
-                title: Text("Getx Buttom Sheet"),
-                onTap:(){
-                  Get.bottomSheet(
-                   Container(
-                     decoration: BoxDecoration(
-                       color: Colors.indigoAccent,
-                       borderRadius: BorderRadius.circular(20),
-                     ),
-                     child: Column(
-                       children: [
-                         ListTile(
-                           leading: Icon(Icons.light_mode,color: Colors.white,),
-                           title: Text("Ligth Mode",style: TextStyle(color: Colors.white),),
-                           onTap: (){
-                              Get.changeTheme(ThemeData.light());
-                           },
-                         ),
-                         ListTile(
-                           leading: Icon(Icons.dark_mode_outlined,color: Colors.white,),
-                           title: Text("Drak Mode",style: TextStyle(color: Colors.white)),
-                           onTap: (){
-                             Get.changeTheme(ThemeData.dark());
-                           },
-                         )
-                       ],
-                     ),
-                   )
-                  );
+                title: const Text("Getx Buttom Sheet"),
+                onTap: () {
+                  Get.bottomSheet(Container(
+                    decoration: BoxDecoration(
+                      color: Colors.indigoAccent,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Column(
+                      children: [
+                        ListTile(
+                          leading: const Icon(
+                            Icons.light_mode,
+                            color: Colors.white,
+                          ),
+                          title: const Text(
+                            "Ligth Mode",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          onTap: () {
+                            Get.changeTheme(ThemeData.light());
+                          },
+                        ),
+                        ListTile(
+                          leading: const Icon(
+                            Icons.dark_mode_outlined,
+                            color: Colors.white,
+                          ),
+                          title: const Text("Drak Mode",
+                              style: TextStyle(color: Colors.white)),
+                          onTap: () {
+                            Get.changeTheme(ThemeData.dark());
+                          },
+                        )
+                      ],
+                    ),
+                  ));
                 },
               ),
             ),
-
-            Container(
-               height:  Get.height*0.5,
-              color: Colors.green,
+            const SizedBox(
+              height: 20,
             ),
-           SizedBox(height: 30,),
-
-            ElevatedButton(onPressed: (){
-
-              Get.toNamed('/PageTwo');
-            },
-                style:ElevatedButton.styleFrom(
+            ElevatedButton(
+                onPressed: () {
+                  Get.toNamed('/PageTwo');
+                },
+                style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.indigo,
-                    foregroundColor: Colors.white,
-                  minimumSize:  Size(500, 50),
-
+                  foregroundColor: Colors.white,
+                  minimumSize: const Size(500, 50),
                 ),
-                child: Text("Move to Page Two"))
+                child: const Text("Move to Page Two"))
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(onPressed: () {
-
-        Get.snackbar('Welcome to Getx', 'Keep Learning',
-        backgroundColor: Colors.red,
-          colorText: Colors.white,
-          duration: Duration(seconds: 5)
-
-        );
-      },
-      child: Icon(Icons.gpp_good_sharp),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Get.snackbar('Welcome to Getx', 'Keep Learning',
+              backgroundColor: Colors.red,
+              colorText: Colors.white,
+              duration: const Duration(seconds: 5));
+        },
+        backgroundColor: Colors.indigo,
+        child: const Icon(
+          Icons.gpp_good_sharp,
+          color: Colors.white,
+        ),
       ),
-
-
     );
   }
 }
