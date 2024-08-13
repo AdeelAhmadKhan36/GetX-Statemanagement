@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_statemanagement/view/controller_counter.dart';
+import 'package:getx_statemanagement/getx/controller_counter.dart';
 
 class Counter_Home extends StatefulWidget {
   const Counter_Home({super.key});
