@@ -6,6 +6,7 @@ import 'package:getx_statemanagement/view/Language_home.dart';
 import 'package:getx_statemanagement/view/Languages.dart';
 import 'package:getx_statemanagement/view/Pagetwo.dart';
 import 'package:getx_statemanagement/view/favourit_app.dart';
+import 'package:getx_statemanagement/view/image_pick.dart';
 import 'package:getx_statemanagement/view/opacity_example2.dart';
 import 'package:getx_statemanagement/view/switch_notification.dart';
 
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Favorite_Home(),
+      home: const Image_Getx(),
       getPages: [
         GetPage(name: '/PageTwo', page: ()=>PageTwo()),
       ],
