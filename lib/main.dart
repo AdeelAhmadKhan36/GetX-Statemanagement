@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:getx_statemanagement/res/routes/routes.dart';
 import 'package:getx_statemanagement/view/Counte_Home.dart';
 import 'package:getx_statemanagement/view/HomePage.dart';
 import 'package:get/get.dart';
@@ -33,10 +34,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const LoginScreen(),
-      getPages: [
-        GetPage(name: '/PageTwo', page: ()=>PageTwo()),
-      ],
+      home: My_HomePage(),
+      getPages:AppRoutes.appRoutes(),
+
     );
   }
 }
