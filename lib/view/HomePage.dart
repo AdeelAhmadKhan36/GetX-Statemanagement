@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_statemanagement/res/assets/image_assets.dart';
+import 'package:getx_statemanagement/res/componants/roundutton.dart';
+import 'package:getx_statemanagement/res/fonts/fonts.dart';
 
 class My_HomePage extends StatefulWidget {
   const My_HomePage({super.key});
@@ -14,9 +17,9 @@ class _My_HomePageState extends State<My_HomePage> {
     final height = MediaQuery.of(context).size.height * 0.2;
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
+        title:  Text(
           "Getx Applications",
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.white, fontFamily: Fonts.bold,),
         ),
         backgroundColor: Colors.indigoAccent,
         centerTitle: true,
@@ -30,7 +33,10 @@ class _My_HomePageState extends State<My_HomePage> {
             ),
             Container(
               height: Get.height * 0.5,
-              color: Colors.green,
+             decoration: BoxDecoration(
+               color: Colors.green,
+               image: DecorationImage(image: AssetImage(ImageAssets.homepage))
+             ),
               child: const Center(
                   child: Text(
                 'Getx State Management ',
@@ -110,16 +116,27 @@ class _My_HomePageState extends State<My_HomePage> {
             const SizedBox(
               height: 20,
             ),
-            ElevatedButton(
-                onPressed: () {
-                  Get.toNamed('/PageTwo');
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.indigo,
-                  foregroundColor: Colors.white,
-                  minimumSize: const Size(500, 50),
-                ),
-                child: const Text("Move to Page Two"))
+
+            RoundButton(onPressed: () {  },
+               title: 'Move to Next Page',
+              height: 50,
+              width: 500,
+              TextColor: Colors.white,
+              ButtonColor:Colors.indigo,
+
+
+
+            )
+            // ElevatedButton(
+            //     onPressed: () {
+            //       Get.toNamed('/PageTwo');
+            //     },
+            //     style: ElevatedButton.styleFrom(
+            //       backgroundColor: Colors.indigo,
+            //       foregroundColor: Colors.white,
+            //       minimumSize: const Size(500, 50),
+            //     ),
+            //     child: const Text("Move to Page Two"))
           ],
         ),
       ),

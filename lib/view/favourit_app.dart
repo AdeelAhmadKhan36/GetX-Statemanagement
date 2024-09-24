@@ -45,13 +45,13 @@ class _Favorite_HomeState extends State<Favorite_Home> {
                         _favourite_controller.fav_fruites.remove(
                             _favourite_controller.fruites_List[index].toString()
                         );
-                        showCustomSnackbar("Favorite Fruit Removed Successfully");
+                       Utils(). showCustomSnackbar("Favorite Fruit Removed Successfully");
 
                       } else {
                         _favourite_controller.fav_fruites.add(
                             _favourite_controller.fruites_List[index].toString());
 
-                        showCustomSnackbar("Favorite Fruit Added Successfully");
+                        Utils().showCustomSnackbar("Favorite Fruit Added Successfully");
 
                       }
                       // setState(() {

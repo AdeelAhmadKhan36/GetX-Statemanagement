@@ -10,10 +10,6 @@ class  Utils{
      FocusScope.of(context).requestFocus(nextFocus);
    }
 
-
-
-
-
   void showCustomSnackbar(String message) {
     Get.rawSnackbar(
       backgroundColor: Colors.red,
